@@ -36,6 +36,22 @@
         .btn:hover {
             background-color: #dc2626;
         }
+
+        .icon-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .icon-box:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-icons a:hover {
+            color: #ef4444;
+        }
     </style>
 </head>
 
@@ -43,89 +59,104 @@
 
     <!-- Hero Section -->
     <header class="hero py-20 text-center">
-        <h1 class="text-4xl font-bold">Welcome to National Citizen Party (NCP)</h1>
-        <p class="mt-4 text-lg">A democratic, equal, and people-representing political party</p>
-        <button class="btn mt-6">Join Us</button>
+        <div class="container mx-auto">
+            <h1 class="text-4xl sm:text-5xl font-bold">Welcome to National Citizen Party (NCP)</h1>
+            <p class="mt-4 text-lg sm:text-xl">A democratic, equal, and people-representing political party</p>
+            <button class="btn mt-6 text-lg">Join Us</button>
+        </div>
     </header>
 
     <!-- About Us Section -->
-    <section class="section-bg py-20 text-center">
-        <h2 class="text-3xl font-semibold text-blue-600">About NCP</h2>
-        <p class="mt-4 max-w-3xl mx-auto text-gray-700">
-            National Citizen Party (NCP) is committed to building a better future by representing the will of the people and ensuring equality and democracy for all. Our mission is to create a society where every citizen's voice is heard and valued.
-        </p>
-        <button class="btn mt-6">Learn More</button>
+    <section class="section-bg py-16 sm:py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-blue-600">About NCP</h2>
+            <p class="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-gray-700">
+                National Citizen Party (NCP) is committed to building a better future by representing the will of the
+                people and ensuring equality and democracy for all. Our mission is to create a society where every citizen's voice is heard and valued.
+            </p>
+            <button class="btn mt-6 text-lg">Learn More</button>
+        </div>
     </section>
 
     <!-- Leadership Section -->
-    <section class="py-20 text-center bg-white">
-        <h2 class="text-3xl font-semibold text-green-600">Leadership</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
-                <h3 class="mt-4 text-xl font-semibold">Nahid Islam</h3>
-                <p class="text-gray-600">Chairman</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
-                <h3 class="mt-4 text-xl font-semibold">Akhtar Hossain</h3>
-                <p class="text-gray-600">Secretary</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg">
-                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
-                <h3 class="mt-4 text-xl font-semibold">Hasnat Abdullah</h3>
-                <p class="text-gray-600">Chief Organizer</p>
+    <section class="py-16 sm:py-24 bg-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-green-600">Leadership</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-12">
+                <div class="icon-box">
+                    <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                    <h3 class="mt-4 text-xl font-semibold">Nahid Islam</h3>
+                    <p class="text-gray-600">Chairman</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                    <h3 class="mt-4 text-xl font-semibold">Akhtar Hossain</h3>
+                    <p class="text-gray-600">Secretary</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                    <h3 class="mt-4 text-xl font-semibold">Hasnat Abdullah</h3>
+                    <p class="text-gray-600">Chief Organizer</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Core Policies Section -->
-    <section class="section-bg py-20 text-center">
-        <h2 class="text-3xl font-semibold text-red-600">Our Core Policies</h2>
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-green-600">Equality for All</h3>
-                <p class="mt-4 text-gray-700">We strive to eliminate all forms of discrimination, promoting equal opportunities and justice for every citizen.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-green-600">Economic Development</h3>
-                <p class="mt-4 text-gray-700">We are committed to strengthening the economy through policies that foster job growth, infrastructure, and innovation.</p>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-green-600">Healthcare for All</h3>
-                <p class="mt-4 text-gray-700">Our goal is to provide accessible and affordable healthcare to every citizen, ensuring a healthy future for our nation.</p>
+    <section class="section-bg py-16 sm:py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-red-600">Our Core Policies</h2>
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                    <h3 class="text-xl font-semibold text-green-600">Equality for All</h3>
+                    <p class="mt-4 text-gray-700">We strive to eliminate all forms of discrimination, promoting equal opportunities and justice for every citizen.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                    <h3 class="text-xl font-semibold text-green-600">Economic Development</h3>
+                    <p class="mt-4 text-gray-700">We are committed to strengthening the economy through policies that foster job growth, infrastructure, and innovation.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl">
+                    <h3 class="text-xl font-semibold text-green-600">Healthcare for All</h3>
+                    <p class="mt-4 text-gray-700">Our goal is to provide accessible and affordable healthcare to every citizen, ensuring a healthy future for our nation.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Get Involved Section -->
-    <section class="py-20 text-center bg-blue-600 text-white">
-        <h2 class="text-3xl font-semibold">Get Involved with NCP</h2>
-        <p class="mt-4 max-w-2xl mx-auto">Join our movement! We need passionate individuals who are committed to creating a better society.</p>
-        <button class="btn mt-6">Become a Member</button>
+    <section class="py-16 sm:py-24 text-center bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold">Get Involved with NCP</h2>
+            <p class="mt-4 text-lg sm:text-xl max-w-2xl mx-auto">Join our movement! We need passionate individuals who are committed to creating a better society.</p>
+            <button class="btn mt-6 text-lg">Become a Member</button>
+        </div>
     </section>
 
     <!-- Contact Us Section -->
-    <section class="section-bg py-20 text-center">
-        <h2 class="text-3xl font-semibold text-red-600">Contact Us</h2>
-        <p class="mt-4 max-w-2xl mx-auto text-gray-700">Have questions or want to get in touch with us? Reach out to us using the form below!</p>
-        <div class="mt-8">
-            <form action="#" method="POST" class="max-w-2xl mx-auto">
-                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
-                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
-                <textarea name="message" placeholder="Your Message" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4"></textarea>
-                <button type="submit" class="btn">Submit</button>
-            </form>
+    <section class="section-bg py-16 sm:py-24 text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-semibold text-red-600">Contact Us</h2>
+            <p class="mt-4 text-lg sm:text-xl max-w-2xl mx-auto text-gray-700">Have questions or want to get in touch with us? Reach out to us using the form below!</p>
+            <div class="mt-8">
+                <form action="#" method="POST" class="max-w-2xl mx-auto">
+                    <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
+                    <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
+                    <textarea name="message" placeholder="Your Message" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="bg-blue-600 text-white py-8 text-center">
-        <p>© 2025 National Citizen Party (NCP). All rights reserved.</p>
-        <div class="mt-4">
-            <a href="#" class="mx-4 text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="mx-4 text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="mx-4 text-white"><i class="fab fa-youtube"></i></a>
+        <div class="container mx-auto px-4">
+            <p>© 2025 National Citizen Party (NCP). All rights reserved.</p>
+            <div class="mt-4 footer-icons">
+                <a href="#" class="mx-4 text-white text-lg"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="mx-4 text-white text-lg"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="mx-4 text-white text-lg"><i class="fab fa-youtube"></i></a>
+            </div>
         </div>
     </footer>
 
