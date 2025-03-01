@@ -1,126 +1,145 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>জাতীয় নাগরিক পার্টি (NCP)</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <!-- jQuery CDN -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>National Citizen Party - NCP</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        /* Custom styles for NCP website */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
-        .header {
-            background-color: #1E3A8A; /* Blue */
+        /* Custom Styles for Header */
+        .hero {
+            background-color: #3b82f6;
             color: white;
-            padding: 20px;
         }
 
-        .footer {
-            background-color: #000000; /* Black */
-            color: white;
-            padding: 10px 0;
-            text-align: center;
+        .section-bg {
+            background-color: #f3f4f6;
         }
 
-        .content {
-            background-color: #f3f4f6; /* Light Gray */
-            padding: 20px;
-        }
-
-        .button {
-            background-color: #10B981; /* Green */
+        .btn {
+            background-color: #ef4444;
             color: white;
             padding: 10px 20px;
             border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            transition: background-color 0.3s;
+            text-align: center;
+            cursor: pointer;
         }
 
-        .button:hover {
-            background-color: #047857; /* Dark Green */
+        .btn:hover {
+            background-color: #dc2626;
         }
     </style>
 </head>
 
-<body class="bg-white">
+<body>
 
-    <!-- Header Section -->
-    <header class="header text-center">
-        <h1 class="text-4xl font-bold">জাতীয় নাগরিক পার্টি (NCP)</h1>
-        <p class="text-lg">একটি গণতান্ত্রিক, সমতাভিত্তিক ও জনগণের প্রতিনিধিত্বকারী রাজনৈতিক দল</p>
+    <!-- Hero Section -->
+    <header class="hero py-20 text-center">
+        <h1 class="text-4xl font-bold">Welcome to National Citizen Party (NCP)</h1>
+        <p class="mt-4 text-lg">A democratic, equal, and people-representing political party</p>
+        <button class="btn mt-6">Join Us</button>
     </header>
 
-    <!-- Main Content Section -->
-    <div class="content container mx-auto my-10 px-4">
+    <!-- About Us Section -->
+    <section class="section-bg py-20 text-center">
+        <h2 class="text-3xl font-semibold text-blue-600">About NCP</h2>
+        <p class="mt-4 max-w-3xl mx-auto text-gray-700">
+            National Citizen Party (NCP) is committed to building a better future by representing the will of the people and ensuring equality and democracy for all. Our mission is to create a society where every citizen's voice is heard and valued.
+        </p>
+        <button class="btn mt-6">Learn More</button>
+    </section>
 
-        <!-- Leadership Section -->
-        <section class="my-8">
-            <h2 class="text-2xl font-semibold text-blue-800 mb-4">নেতৃত্ব</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold text-blue-700">আহ্বায়ক</h3>
-                    <p class="text-lg">নাহিদ ইসলাম</p>
-                </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold text-blue-700">সদস্য সচিব</h3>
-                    <p class="text-lg">আখতার হোসেন</p>
-                </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <h3 class="text-xl font-bold text-blue-700">মুখ্য সংগঠক</h3>
-                    <p class="text-lg">হাসনাত আবদুল্লাহ</p>
-                </div>
-                <!-- Repeat this for the other roles as necessary -->
+    <!-- Leadership Section -->
+    <section class="py-20 text-center bg-white">
+        <h2 class="text-3xl font-semibold text-green-600">Leadership</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-12">
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                <h3 class="mt-4 text-xl font-semibold">Nahid Islam</h3>
+                <p class="text-gray-600">Chairman</p>
             </div>
-        </section>
-
-        <!-- Members Section -->
-        <section class="my-8">
-            <h2 class="text-2xl font-semibold text-blue-800 mb-4">সদস্যবৃন্দ</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <p class="text-lg">খোকন চন্দ্র বর্মন (আহত)</p>
-                </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <p class="text-lg">মো. দুলাল খান (আহত)</p>
-                </div>
-                <div class="bg-green-100 p-4 rounded-lg shadow-md">
-                    <p class="text-lg">আব্দুল্লাহ শাফিল (আহত)</p>
-                </div>
-                <!-- Repeat for more members -->
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                <h3 class="mt-4 text-xl font-semibold">Akhtar Hossain</h3>
+                <p class="text-gray-600">Secretary</p>
             </div>
-        </section>
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <i class="fas fa-user-tie text-5xl text-blue-500"></i>
+                <h3 class="mt-4 text-xl font-semibold">Hasnat Abdullah</h3>
+                <p class="text-gray-600">Chief Organizer</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Action Button -->
-        <section class="text-center mt-8">
-            <a href="#" class="button">Join Us Now</a>
-        </section>
+    <!-- Core Policies Section -->
+    <section class="section-bg py-20 text-center">
+        <h2 class="text-3xl font-semibold text-red-600">Our Core Policies</h2>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-green-600">Equality for All</h3>
+                <p class="mt-4 text-gray-700">We strive to eliminate all forms of discrimination, promoting equal opportunities and justice for every citizen.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-green-600">Economic Development</h3>
+                <p class="mt-4 text-gray-700">We are committed to strengthening the economy through policies that foster job growth, infrastructure, and innovation.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold text-green-600">Healthcare for All</h3>
+                <p class="mt-4 text-gray-700">Our goal is to provide accessible and affordable healthcare to every citizen, ensuring a healthy future for our nation.</p>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- Get Involved Section -->
+    <section class="py-20 text-center bg-blue-600 text-white">
+        <h2 class="text-3xl font-semibold">Get Involved with NCP</h2>
+        <p class="mt-4 max-w-2xl mx-auto">Join our movement! We need passionate individuals who are committed to creating a better society.</p>
+        <button class="btn mt-6">Become a Member</button>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section class="section-bg py-20 text-center">
+        <h2 class="text-3xl font-semibold text-red-600">Contact Us</h2>
+        <p class="mt-4 max-w-2xl mx-auto text-gray-700">Have questions or want to get in touch with us? Reach out to us using the form below!</p>
+        <div class="mt-8">
+            <form action="#" method="POST" class="max-w-2xl mx-auto">
+                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
+                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4">
+                <textarea name="message" placeholder="Your Message" class="w-full p-4 rounded-lg border-2 border-gray-300 mb-4"></textarea>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer Section -->
-    <footer class="footer">
-        <p>© ২০২৫ জাতীয় নাগরিক পার্টি (NCP)</p>
+    <footer class="bg-blue-600 text-white py-8 text-center">
+        <p>© 2025 National Citizen Party (NCP). All rights reserved.</p>
+        <div class="mt-4">
+            <a href="#" class="mx-4 text-white"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="mx-4 text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="mx-4 text-white"><i class="fab fa-youtube"></i></a>
+        </div>
     </footer>
 
-    <!-- jQuery Script to handle some interaction -->
     <script>
+        // Optional jQuery for smooth scrolling, form validation, etc.
         $(document).ready(function () {
-            $('.button').on('click', function (e) {
-                e.preventDefault();
-                alert("You clicked the Join Us button!");
+            // Example: Smooth scroll to sections when clicking on buttons
+            $('button').click(function () {
+                $('html, body').animate({
+                    scrollTop: $(this).offset().top
+                }, 1000);
             });
         });
     </script>
-
 </body>
 
 </html>
