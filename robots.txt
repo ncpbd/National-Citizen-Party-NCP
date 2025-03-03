@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cgi-bin/
+
+# Allow search engines to index everything else
+Allow: /
+
+# Sitemap Location
+Sitemap: https://jatiyonagrikparty.com/sitemap.xml
