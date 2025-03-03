@@ -9,36 +9,5 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- About Page -->
-    <url>
-        <loc>https://jatiyonagrikparty.com/about/</loc>
-        <lastmod>2025-03-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- History Page -->
-    <url>
-        <loc>https://jatiyonagrikparty.com/history/</loc>
-        <lastmod>2025-03-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- News Section -->
-    <url>
-        <loc>https://jatiyonagrikparty.com/news/</loc>
-        <lastmod>2025-03-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <!-- Contact Page -->
-    <url>
-        <loc>https://jatiyonagrikparty.com/contact/</loc>
-        <lastmod>2025-03-03</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
 
 </urlset>
