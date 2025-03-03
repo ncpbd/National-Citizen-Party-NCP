@@ -45,7 +45,7 @@
   <nav class="bg-blue-600 border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center">
-           <!-- Logo -->
+            <!-- Logo -->
            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxCWJ0lpCURzXoViywccopF8KpMqFS1fQcoQ&s" class="mr-3 h-12 sm:h-9 rounded-full" alt="NCP Logo" />
 
             <!-- Update for Desktop -->
@@ -72,12 +72,13 @@
 
  
         </div>
-        
- <!-- Mobile Menu Button -->
- <button id="mobile-menu-button" class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-white rounded-lg hover:bg-red-600 focus:outline-none">
- <span class="sr-only">Open main menu</span>
- <i class="fa-solid fa-bars-staggered text-4xl"></i> <!-- Font Awesome icon -->
- </button>
+
+<!-- Mobile Menu Button (only visible on mobile) -->
+<button id="mobile-menu-button" class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-white rounded-lg hover:bg-red-600 focus:outline-none md:hidden">
+  <span class="sr-only">Open main menu</span>
+  <i class="fa-solid fa-bars-staggered text-4xl"></i> <!-- Font Awesome icon -->
+</button>
+
  
 
 
@@ -86,7 +87,7 @@
 
 <!-- Navbar Menu -->
 <div class="hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
-  <ul class="flex w-full flex-col font-medium p-0 md:p-0 mt-4 rounded-lg bg-blue-600 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-blue-600">
+  <ul class="flex w-full flex-col font-medium p-0 md:p-0 mt-4 rounded-lg bg-blue-600 md:space-x-2 md:flex-row md:mt-0 md:border-0 md:bg-blue-600">
     <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">About</a></li>
     <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">Vision</a></li>
     <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">Mission</a></li>
@@ -128,6 +129,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 </script>
+
+
 
 
 
