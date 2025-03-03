@@ -42,52 +42,93 @@
 </style>
 </head>
 <header>
-    <nav class="bg-blue-600 border-gray-200 px-4 lg:px-6 py-2.5">
-        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-            <a href="#" class="flex items-center">
-                <!-- Flowbite Logo -->
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxCWJ0lpCURzXoViywccopF8KpMqFS1fQcoQ&s" class="mr-3 h-12 sm:h-9" alt="Flowbite Logo" />
-                <!-- Update for Desktop -->
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-white hidden lg:block">জাতীয় নাগরিক পার্টি (NCP)</span>
-                <!-- Update for Mobile -->
-                <span class="self-center text-xl font-semibold whitespace-nowrap text-white lg:hidden">NCP</span>
-            </a>
-            <div class="flex items-center lg:order-2">
-                <a href="#" class="text-blue-600 bg-white hover:bg-blue-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Join Party</a>
-                <a href="#" class="text-blue-600 bg-white hover:bg-blue-300 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">Donate</a>
-                <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-3 ml-1 text-white text-xl rounded-lg lg:hidden hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-200" aria-controls="mobile-menu-2" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    <svg class="hidden w-8 h-8" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                </button>
-            </div>
-<div class="mt-6 w-full lg:flex lg:justify-center lg:items-center lg:w-auto lg:order-1" id="mobile-menu-2">
-    <ul class="text-gray-300 font-medium flex flex-col lg:flex-row lg:space-x-6">
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">About</a></li>
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">Contact</a></li>
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">Vision</a></li>
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">Mission</a></li>
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">Join Party</a></li>
-        <li class="mb-4 lg:mb-0"><a href="#" class="hover:underline">Donate</a></li>
-    </ul>
+  <nav class="bg-blue-600 border-gray-200">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center">
+            <!-- Flowbite Logo -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxCWJ0lpCURzXoViywccopF8KpMqFS1fQcoQ&s" class="mr-3 h-12 sm:h-9" alt="Flowbite Logo" />
+            <!-- Update for Desktop -->
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-white hidden lg:block">জাতীয় নাগরিক পার্টি (NCP)</span>
+            <!-- Update for Mobile -->
+            <span class="self-center text-xl font-semibold whitespace-nowrap text-white lg:hidden">NCP</span>
+        </a>
+      
+      <div class="flex items-center md:order-2 space-x-2">
+        <!-- User menu button with icon -->
+        <button type="button" id="user-menu-button" class="text-white bg-green-600 px-3 py-1 rounded-full ring-2 ring-white focus:ring-2 focus:ring-red-600">
+          <span class="sr-only">Open menu</span>
+          <i class="fa-solid fa-plus-minus text-xl"></i>
+        </button>
+
+        <!-- Dropdown menu (mt-60 added) -->
+        <div class="z-50 hidden absolute right-4 mt-60 w-48 bg-blue-200 rounded-lg shadow-lg" id="user-dropdown">
+<ul class="py-2">
+  <li><a href="#" class="block rounded-lg px-4 py-2 text-blue-600 hover:text-white hover:bg-red-600 active:bg-green-600">Join Patry</a></li>
+  <li><a href="#" class="block rounded-lg px-4 py-2 text-blue-600 hover:text-white hover:bg-red-600 active:bg-green-600">Donate Patry</a></li>
+  <li><a href="#" class="block rounded-lg px-4 py-2 text-blue-600 hover:text-white hover:bg-red-600 active:bg-green-600">Party Leaders</a></li>
+  <li><a href="#" class="block rounded-lg px-4 py-2 text-blue-600 hover:text-white hover:bg-red-600 active:bg-green-600">Patry Store</a></li>
+</ul>
+
+ 
+        </div>
+        
+ <!-- Mobile Menu Button -->
+ <button id="mobile-menu-button" class="inline-flex items-center p-2 w-12 h-12 justify-center text-sm text-white rounded-lg hover:bg-red-600 focus:outline-none">
+ <span class="sr-only">Open main menu</span>
+ <i class="fa-solid fa-bars-staggered text-4xl"></i> <!-- Font Awesome icon -->
+ </button>
+ 
+
+
+ 
+      </div>
+
+<!-- Navbar Menu -->
+<div class="hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+  <ul class="flex w-full flex-col font-medium p-0 md:p-0 mt-4 rounded-lg bg-blue-600 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-blue-600">
+    <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">About</a></li>
+    <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">Vision</a></li>
+    <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">Mission</a></li>
+    <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">Works</a></li>
+    <li><a href="#" class="block py-2 px-3 text-white rounded-lg hover:bg-red-600 hover:text-white ">History</a></li>
+
+  </ul>
 </div>
 
-
-        </div>
-    </nav>
+    </div>
+  </nav>
 </header>
 
-
-
-
-
-<!-- JavaScript to toggle mobile menu -->
+<!-- JavaScript -->
 <script>
-    document.querySelector('[data-collapse-toggle="mobile-menu-2"]').addEventListener('click', function() {
-        const menu = document.getElementById('mobile-menu-2');
-        menu.classList.toggle('hidden');
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const navbarMenu = document.getElementById("navbar-user");
+
+  mobileMenuButton.addEventListener("click", function () {
+    navbarMenu.classList.toggle("hidden");
+  });
+
+  // User dropdown menu toggle
+  const userMenuButton = document.getElementById("user-menu-button");
+  const userDropdown = document.getElementById("user-dropdown");
+
+  userMenuButton.addEventListener("click", function (event) {
+    event.stopPropagation(); // Prevents closing immediately after opening
+    userDropdown.classList.toggle("hidden");
+  });
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+      userDropdown.classList.add("hidden");
+    }
+  });
+});
 </script>
+
+
 
 
 <!-- Hero Section -->
