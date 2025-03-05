@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Political Party Membership</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery CDN -->
+</head>
+<body class="bg-blue-600 min-h-screen flex items-center justify-center p-4">
+    <!-- Loading Overlay (Initially Hidden) -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-white"></div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-2xl p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <img src="img/website/logo.webp" alt="Party Logo" class="w-24 h-24 mx-auto rounded-full shadow-lg mb-4">
+            <h1 class="text-3xl font-bold text-blue-600">Join Our Party</h1>
+            <p class="text-gray-600 mt-2">Be part of the change you want to see</p>
+        </div>
+
+        <form id="membershipForm" class="space-y-6">
+            <div class="relative">
+                <i class="fas fa-user absolute top-3 left-3 text-gray-400"></i>
+                <input type="text" id="fullName" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent" placeholder="Full Name">
+            </div>
+
+            <div class="relative">
+                <i class="fas fa-envelope absolute top-3 left-3 text-gray-400"></i>
+                <input type="email" id="email" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent" placeholder="Email Address">
+            </div>
+
+            <div class="relative">
+                <i class="fas fa-phone absolute top-3 left-3 text-gray-400"></i>
+                <input type="tel" id="phone" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent" placeholder="Phone Number">
+            </div>
+
+            <div class="relative">
+                <i class="fas fa-calendar absolute top-3 left-3 text-gray-400"></i>
+                <input type="date" id="dob" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+            </div>
+
+            <div class="relative">
+                <i class="fas fa-map-marker-alt absolute top-3 left-3 text-gray-400"></i>
+                <input type="text" id="zila" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent" placeholder="Enter Your Zila (District)">
+            </div>
+
+            <div class="relative">
+                <i class="fas fa-flag absolute top-3 left-3 text-gray-400"></i>
+                <select id="membershipType" class="pl-10 w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent">
+                    <option value="">Select Membership Type</option>
+                    <option value="supporter">Supporter</option>
+                    <option value="active">Active Member</option>
+                    <option value="volunteer">Volunteer</option>
+                </select>
+            </div>
+
+            <div class="flex space-x-4">
+                <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-check mr-2"></i> Submit
+                </button>
+                <button type="reset" class="w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-times mr-2"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Success Message Overlay -->
+    <div id="successOverlay" class="hidden fixed inset-0 bg-green-500 bg-opacity-75 flex items-center justify-center z-50">
+        <div class="text-center text-white p-8 rounded-lg ">
+            <i class="fas fa-check-circle text-8xl mb-4"></i>
+            <h2 class="text-3xl font-semibold">Your Request has been Successfully Received!</h2>
+            <p class="mt-4">Thanks for joining our party, we will verify your request and connect you.</p>
+            <button id="closeSuccessOverlay" class="mt-6 bg-white text-green-600 px-4 py-2 rounded-lg hover:bg-green-200">Close</button>
+        </div>
+    </div>
+
+<script>
+    $(document).ready(function () {
+      
+        $("#membershipForm").submit(function (event) {
+            event.preventDefault(); // Prevent page reload
+
+            // Reset error styles
+            $("input, select").removeClass("border-red-500");
+
+            // Get form values
+            let fullName = $("#fullName").val().trim();
+            let email = $("#email").val().trim();
+            let phone = $("#phone").val().trim();
+            let dob = $("#dob").val().trim();
+            let zila = $("#zila").val().trim();
+            let membershipType = $("#membershipType").val().trim();
+
+            // Validate fields
+            let isValid = true;
+            if (fullName === "") { $("#fullName").addClass("border-red-500"); isValid = false; }
+            if (email === "") { $("#email").addClass("border-red-500"); isValid = false; }
+            if (phone === "") { $("#phone").addClass("border-red-500"); isValid = false; }
+            if (dob === "") { $("#dob").addClass("border-red-500"); isValid = false; }
+            if (zila === "") { $("#zila").addClass("border-red-500"); isValid = false; }
+            if (membershipType === "") { $("#membershipType").addClass("border-red-500"); isValid = false; }
+
+            if (!isValid) {
+                return; // Stop execution if validation fails
+            }
+
+            // Show loading animation
+            $("#loadingOverlay").removeClass("hidden");
+
+            // Simulate form processing (no delay now)
+            // Create an object to store the data
+            let formData = {
+                Full_Name: fullName,
+                Email: email,
+                Phone: phone,
+                Date_of_Birth: dob,
+                Zila: zila,
+                Membership_Type: membershipType
+            };
+
+            // Make an AJAX request to the Google Apps Script endpoint
+            $.ajax({
+                url: 'https://script.google.com/macros/s/AKfycbxcw1b8lZV4YoA82SkjUKXsh7GZLd3YkZCoq8kahS4gPBRT2h5dN18H7YCEYNtGMI8JIA/exec',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function(response) {
+                    // Hide loading animation
+                    $("#loadingOverlay").addClass("hidden");
+
+                    // Show the success overlay
+                    $("#successOverlay").removeClass("hidden");
+
+                    // Reset the form
+                    $("#membershipForm")[0].reset();
+                },
+                error: function(xhr, status, error) {
+                    // Hide loading animation
+                    $("#loadingOverlay").addClass("hidden");
+
+                    // Show error message in the success overlay
+                    $("#successOverlay").removeClass("hidden").find("h2").text("❌ Error: Unable to submit form data");
+                }
+            });
+        });
+
+        // Close the success overlay
+        $("#closeSuccessOverlay").click(function() {
+            $("#successOverlay").addClass("hidden");
+        });
+    });
+</script>
+
+</body>
+</html>
