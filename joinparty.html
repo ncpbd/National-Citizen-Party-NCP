@@ -79,80 +79,81 @@
     </div>
 
 <script>
-    $(document).ready(function () {
-      
-        $("#membershipForm").submit(function (event) {
-            event.preventDefault(); // Prevent page reload
+$(document).ready(function () {
+    $("#membershipForm").submit(function (event) {
+        event.preventDefault(); // Prevent page reload
 
-            // Reset error styles
-            $("input, select").removeClass("border-red-500");
+        // Reset error styles
+        $("input, select").removeClass("border-red-500");
 
-            // Get form values
-            let fullName = $("#fullName").val().trim();
-            let email = $("#email").val().trim();
-            let phone = $("#phone").val().trim();
-            let dob = $("#dob").val().trim();
-            let zila = $("#zila").val().trim();
-            let membershipType = $("#membershipType").val().trim();
+        // Get form values
+        let fullName = $("#fullName").val().trim();
+        let email = $("#email").val().trim();
+        let phone = $("#phone").val().trim();
+        let dob = $("#dob").val().trim();
+        let zila = $("#zila").val().trim();
+        let membershipType = $("#membershipType").val().trim();
 
-            // Validate fields
-            let isValid = true;
-            if (fullName === "") { $("#fullName").addClass("border-red-500"); isValid = false; }
-            if (email === "") { $("#email").addClass("border-red-500"); isValid = false; }
-            if (phone === "") { $("#phone").addClass("border-red-500"); isValid = false; }
-            if (dob === "") { $("#dob").addClass("border-red-500"); isValid = false; }
-            if (zila === "") { $("#zila").addClass("border-red-500"); isValid = false; }
-            if (membershipType === "") { $("#membershipType").addClass("border-red-500"); isValid = false; }
+        // Validate fields
+        let isValid = true;
+        if (fullName === "") { $("#fullName").addClass("border-red-500"); isValid = false; }
+        if (email === "") { $("#email").addClass("border-red-500"); isValid = false; }
+        if (phone === "") { $("#phone").addClass("border-red-500"); isValid = false; }
+        if (dob === "") { $("#dob").addClass("border-red-500"); isValid = false; }
+        if (zila === "") { $("#zila").addClass("border-red-500"); isValid = false; }
+        if (membershipType === "") { $("#membershipType").addClass("border-red-500"); isValid = false; }
 
-            if (!isValid) {
-                return; // Stop execution if validation fails
+        if (!isValid) {
+            return; // Stop execution if validation fails
+        }
+
+        // Show loading animation
+        $("#loadingOverlay").removeClass("hidden");
+
+        // Simulate form processing (no delay now)
+        // Create an object to store the data
+        let formData = {
+            Full_Name: fullName,
+            Email: email,
+            Phone: phone,
+            Date_of_Birth: dob,
+            Zila: zila,
+            Membership_Type: membershipType
+        };
+
+        // Convert formData object into query parameters for GET request
+        let queryString = $.param(formData);
+
+        // Make an AJAX request to the Google Apps Script endpoint
+        $.ajax({
+            url: 'https://script.google.com/macros/s/AKfycbznGWuJOGFamiJRIsMjcYe6GzmvBpmGjTVKNplpSxO8RpzyF458SSiaMnJTRRhfYYOXpQ/exec?' + queryString,
+            type: 'GET',
+            success: function(response) {
+                // Hide loading animation
+                $("#loadingOverlay").addClass("hidden");
+
+                // Show the success overlay
+                $("#successOverlay").removeClass("hidden");
+
+                // Reset the form
+                $("#membershipForm")[0].reset();
+            },
+            error: function(xhr, status, error) {
+                // Hide loading animation
+                $("#loadingOverlay").addClass("hidden");
+
+                // Show error message in the success overlay
+                $("#successOverlay").removeClass("hidden").find("h2").text("❌ Error: Unable to submit form data");
             }
-
-            // Show loading animation
-            $("#loadingOverlay").removeClass("hidden");
-
-            // Simulate form processing (no delay now)
-            // Create an object to store the data
-            let formData = {
-                Full_Name: fullName,
-                Email: email,
-                Phone: phone,
-                Date_of_Birth: dob,
-                Zila: zila,
-                Membership_Type: membershipType
-            };
-
-            // Make an AJAX request to the Google Apps Script endpoint
-            $.ajax({
-                url: 'https://script.google.com/macros/s/AKfycbyK2hgwNfVOkE42YXPlxKSf5p5ZLj6Y0Fre54IoD8yexaGwvM2k1TORGaB14q-ch12mRg/exec',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(formData),
-                success: function(response) {
-                    // Hide loading animation
-                    $("#loadingOverlay").addClass("hidden");
-
-                    // Show the success overlay
-                    $("#successOverlay").removeClass("hidden");
-
-                    // Reset the form
-                    $("#membershipForm")[0].reset();
-                },
-                error: function(xhr, status, error) {
-                    // Hide loading animation
-                    $("#loadingOverlay").addClass("hidden");
-
-                    // Show error message in the success overlay
-                    $("#successOverlay").removeClass("hidden").find("h2").text("❌ Error: Unable to submit form data");
-                }
-            });
-        });
-
-        // Close the success overlay
-        $("#closeSuccessOverlay").click(function() {
-            $("#successOverlay").addClass("hidden");
         });
     });
+
+    // Close the success overlay
+    $("#closeSuccessOverlay").click(function() {
+        $("#successOverlay").addClass("hidden");
+    });
+});
+ 
 </script>
 
 </body>
